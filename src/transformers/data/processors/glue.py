@@ -274,8 +274,8 @@ class KorMnliProcessor(DataProcessor):
             if i == 0:
                 continue
             guid = "%s-%s" % (set_type, line[2])
-            text_a = line[1]
-            text_b = line[2]
+            text_a = line[0]
+            text_b = line[1]
             label = None if set_type.startswith("test") else line[-1]
             examples.append(InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
