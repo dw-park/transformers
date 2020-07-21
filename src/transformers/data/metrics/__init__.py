@@ -60,16 +60,12 @@ if _has_sklearn:
             return acc_and_f1(preds, labels)
         elif task_name == "sts-b":
             return pearson_and_spearman(preds, labels)
-        elif task_name == "korsts":
-            return pearson_and_spearman(preds, labels)
         elif task_name == "qqp":
             return acc_and_f1(preds, labels)
         elif task_name == "mnli":
-            return {"acc": simple_accuracy(preds, labels)}
-        elif task_name == "kormnli":
-            return {"acc": simple_accuracy(preds, labels)}
+            return {"mnli/acc": simple_accuracy(preds, labels)}
         elif task_name == "mnli-mm":
-            return {"acc": simple_accuracy(preds, labels)}
+            return {"mnli-mm/acc": simple_accuracy(preds, labels)}
         elif task_name == "qnli":
             return {"acc": simple_accuracy(preds, labels)}
         elif task_name == "rte":
